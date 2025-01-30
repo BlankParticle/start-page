@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "@fontsource/fira-sans/cyrillic-400.css";
+
+@plugin "tailwindcss-spring";
+@plugin "./lib/tailwind-plugin-glow.ts";
+
+@theme {
+  --font-sans: "Fira Sans";
+}
+
+@layer base {
+  html {
+    @apply h-full scroll-smooth font-mono antialiased;
+  }
+  body {
+    @apply h-full bg-gray-950 text-gray-100;
+    background-image: url("/background.webp");
+  }
+}
