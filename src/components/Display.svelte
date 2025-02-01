@@ -1,5 +1,4 @@
 <script lang="ts">
-  import clsx from "clsx";
   const { matrix }: { matrix: (boolean | number)[][] } = $props();
 </script>
 
@@ -7,13 +6,7 @@
   {#each matrix as row, i}
     <div class="flex gap-1">
       {#each row as active, j}
-        <div
-          style:transition-delay={`${i * 50 + j * 10}ms`}
-          class={clsx(
-            "border-glow-green-500 size-4 scale-0 rounded-xs bg-green-500 transition-all duration-300 ease-in-out",
-            active && "scale-100",
-          )}
-        ></div>
+        <div style:transition-delay={`${i * 50 + j * 10}ms`} class={`led${!active ? " scale-0" : ""}`}></div>
       {/each}
     </div>
   {/each}
